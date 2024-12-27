@@ -7,7 +7,7 @@ NASM_FLAGS = -f elf64
 LD_FLAGS = 
 
 # Source files
-ASM_FILES = main.asm print_welcome.asm print.asm print_options.asm get_int.asm print_invalid_option.asm
+ASM_FILES = main.asm print_welcome.asm print.asm print_options.asm get_int.asm print_invalid_option.asm get_name.asm zero_buf.asm
 
 # Object files (generated from the assembly files)
 OBJ_FILES = $(ASM_FILES:.asm=.o)

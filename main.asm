@@ -1,5 +1,5 @@
 section .data
-    debug_msg db "Debug: Entered choice loop", 0xA, 0
+    debug_msg db "Debug: Option 1 entered", 0xA, 0
     debug_msg_len equ $ - debug_msg
 
     debug_msg1 db "Debug: Entered print_error loop", 0xA, 0
@@ -10,6 +10,7 @@ section .text
     extern _print_options
     extern _print_invalid_option
     extern _get_int
+    extern _get_name
     global _start
 
 _start:
@@ -31,7 +32,9 @@ choice:
 
 
 option_1:
-    call _print_welcome
+    call _get_name
+    mov rdi, rsi    ; mov *name into rdi ready for _print
+    call _print
     jmp choice
 
 exit:
