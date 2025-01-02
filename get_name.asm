@@ -1,11 +1,12 @@
 section .bss
-    name resb 64
+    name resb 0x64
 
 section .text
     extern _zero_buf
     global _get_name
 
 ; Get name from stdin and return
+; removes trailing newline character
 ; name buf will be contained in rsi after returning
 _get_name:
     mov rdi, name   ; *name
@@ -17,4 +18,5 @@ _get_name:
     mov rdx, 0x64   ; count
     syscall
     ret
+
 

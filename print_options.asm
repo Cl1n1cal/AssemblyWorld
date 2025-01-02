@@ -2,6 +2,7 @@ section .data
     option_1 db 'Option 1: Check security', 0xA, 0
     option_2 db 'Option 2: Look for something1', 0xA, 0
     option_3 db 'Option 3: Look for something2', 0xA, 0
+    option_4 db 'Option 4: Exit', 0xA, 0
 
 section .text
     extern _print

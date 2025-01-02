@@ -13,7 +13,7 @@ loop:
     jne loop
 
     ; counting done, start printing
-    mov rax, 0x1
+    mov rax, 0x1    ; syscall write
     mov rdi, 0x1
     pop rsi
     mov rdx, rbx
